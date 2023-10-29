@@ -1,0 +1,405 @@
+body {
+  margin: 0px;
+  font-family: sans-serif;
+  background-color: var(--background-2);
+  color: var(--text);
+}
+body.fa {
+  direction: rtl;
+  font-family: "Vazir-FD";
+}
+
+.header {
+  font-size: 16px;
+  padding-left: calc(15% + 5rem);
+  border-bottom: 1px solid var(--grey-3);
+  height: 3.5rem;
+  display: flex;
+  color: var(--grey-1);
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: var(--background-2);
+}
+.header a{
+  color: var(--grey-1);
+    text-decoration: none;
+    transition: .35s ease;
+}
+.header a:hover{
+  filter: brightness(80%);
+}
+body.fa .header {
+  padding-left: 0;
+  padding-right: calc(15% + 5rem);
+}
+
+.sidebar {
+  width: 15%;
+  font-size: 12px;
+  padding: 0rem 2rem;
+  border-right: 1px solid var(--grey-3);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+}
+body.fa .sidebar {
+  border-right: none;
+  border-left: 1px solid var(--grey-3);
+}
+.sidebar .logo {
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.sidebar .logo img {
+  width: 3rem;
+}
+
+.sidebar a {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  color: var(--grey-1);
+  border-radius: 4px;
+  transition: 0.35s ease;
+}
+
+.sidebar a.router-link-exact-active {
+  background: var(--info);
+  font-weight: bold;
+  color: var(--text);
+}
+.sidebar a .sidebar-img {
+  width: 25px;
+  margin-right: 2px;
+  opacity: 0.6;
+  transition: 0.35s ease;
+}
+.sidebar a span {
+  transition: 0.35s ease;
+  padding-left: 3px;
+}
+body.fa .sidebar a span {
+  padding-right: 3px;
+  padding-left: 0;
+}
+.sidebar a.router-link-exact-active .sidebar-img {
+  opacity: 1;
+}
+
+.sidebar a:not(.router-link-exact-active):hover span {
+  color: var(--text);
+}
+.sidebar a:not(.router-link-exact-active):hover .sidebar-img {
+  opacity: 0.8;
+}
+
+#sidebar-img {
+  fill: var(--grey-1);
+}
+.sidebar a.router-link-exact-active #sidebar-img {
+  fill: var(--text);
+}
+
+.content {
+  position: absolute;
+  top: calc(3.5rem + 1px);
+  min-height: calc(100vh - 3.5rem);
+  /* bottom: 0; */
+  background-color: var(--background-1);
+  z-index: -1;
+}
+.content {
+  left: calc(15% + 4rem + 1px);
+  right: 0;
+}
+body.fa .content {
+  right: calc(15% + 4rem + 1px);
+  left: 0;
+}
+
+/***** Start DashboardView styles *****/
+.dashboard-wrapper {
+  margin: 2rem 0;
+  width: 100%;
+  height: calc(100% - 4rem);
+  display: flex;
+}
+.dashboard-wrapper .img-col {
+  width: 30%;
+}
+.dashboard-wrapper .img-col img {
+  width: 100%;
+  filter: drop-shadow(2px 4px 6px black);
+}
+body.fa .dashboard-wrapper .img-col img {
+  transform: scaleX(-1);
+}
+.dashboard-wrapper .text-col {
+  width: 70%;
+}
+.time-wrapper {
+  font-size: 50px;
+}
+body.fa .time-wrapper {
+  direction: ltr;
+  text-align: end;
+}
+.message-wrapper {
+  font-family: cursive;
+  text-shadow: 1px 3px var(--info);
+}
+body.fa .message-wrapper {
+}
+/***** End DashboardView styles *****/
+
+/***** Start todoesView styles *****/
+.todoes-wrapper {
+  width: 60%;
+  min-width: 300px;
+  margin: 2rem auto;
+  border: 1px solid var(--grey-3);
+  border-radius: 0.4rem;
+  background: var(--background-2);
+  min-height: 200px !important;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.todoes-title {
+  text-align: center;
+  margin: 0;
+  padding: 1rem 0;
+  background: var(--info);
+  border-bottom: 1px solid var(--grey-3);
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+}
+
+.todoes-wrapper form {
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todoes-wrapper form input {
+  width: 170px;
+}
+.todoes-wrapper form button {
+  margin: 0 0.25rem 0;
+  padding: 0.6rem 0.75rem;
+}
+body.fa .todoes-wrapper form button {
+
+  padding: 0.45rem 0.75rem;
+}
+.todoes-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--grey-3);
+  margin: 1rem;
+  padding-bottom: 1rem;
+  font-weight: bold;
+}
+.todoes-item:last-child {
+  border-bottom: none;
+}
+.todoes-item button {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+/***** End todoesView styles *****/
+
+/***** Start weatherView styles *****/
+.weather-wrapper {
+  margin: 2rem auto;
+  
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 4rem - 50px);
+  width: 30%;
+  min-width: 300px;
+  transition: 1s ease;
+}
+.weather-wrapper.horizontal {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+}
+.weather-input-wrapper {
+  width: 100%;
+  position: relative;
+  margin-bottom: 1rem;
+}
+body.fa .weather-input-wrapper{
+  direction: ltr;
+}
+.weather-wrapper.horizontal .weather-input-wrapper {
+  width: 30%;
+}
+.weather-wrapper.horizontal .weather-details-wrapper {
+  width: 60%;
+}
+
+.weather-details-wrapper {
+  width: 100%;
+  color: black;
+  height: 100%;
+  max-height: 350px;
+  border: 1px solid var(--grey-3);
+  border-radius: 0.4rem;
+  text-align: center;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.weather-wrapper ul {
+  list-style: none;
+  padding: 0;
+  border: 1px solid #cfcccc;
+  border-top: none;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  position: absolute;
+  background: white;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.weather-wrapper li {
+  padding: 4px 6px;
+  color: black;
+  cursor: pointer;
+}
+.weather-wrapper li:hover {
+  background-color: var(--info);
+}
+.weather-details-wrapper .weather-details-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+.weather-details-wrapper .weather-details-text span {
+  font-size: 18px;
+  font-weight: bold;
+}
+/***** End weatherView styles *****/
+
+/***** Start profileView styles *****/
+input::placeholder,
+.profile-wrapper select {
+  text-align: center;
+}
+.profile-wrapper {
+  margin: 2rem auto;
+  text-align: center;
+  width: 30%;
+  min-width: 300px;
+}
+body.fa .profile-wrapper input,
+body.fa .profile-wrapper select {
+  margin-right: 4px;
+}
+.profile-wrapper input,
+.profile-wrapper select {
+  display: block;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.profile-wrapper option[value=""][disabled] {
+  display: none;
+}
+
+.profile-wrapper select:invalid {
+  color: #767676;
+}
+.profile-wrapper .form-item {
+  display: flex;
+  align-items: center;
+}
+.profile-wrapper .form-item svg {
+  margin-bottom: 2rem;
+}
+#profile-img {
+  fill: var(--text);
+}
+/***** End profileView styles *****/
+
+@media (max-width: 992px) {
+  .sidebar {
+    padding: 0 0.5rem;
+  }
+  .sidebar a {
+    padding: 1rem 0.5rem;
+    font-size: 13px;
+  }
+  .sidebar .logo span {
+    display: none;
+  }
+  .sidebar img {
+    margin: 0 auto;
+  }
+  .header {
+    font-size: 13px;
+    padding-left: calc(15% + 2rem);
+  }
+  body.fa .header {
+    padding-right: calc(15% + 2rem);
+  }
+  .content {
+    left: calc(15% + 1rem + 1px);
+  }
+  body.fa .content {
+    right: calc(15% + 1rem + 1px);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar a span {
+    display: none;
+  }
+  .sidebar a .sidebar-img {
+    margin: 0 auto;
+  }
+  .dashboard-wrapper .img-col {
+    width: 55% !important;
+  }
+  .dashboard-wrapper .text-col {
+    width: 45% !important;
+  }
+  .time-wrapper {
+    font-size: 36px !important;
+  }
+  .weather-wrapper,
+  .todoes-wrapper,
+  .profile-wrapper {
+    margin: 2rem auto;
+    min-width: 250px !important;
+  }
+  .weather-wrapper.horizontal {
+    flex-direction: column !important;
+    width: 30% !important;
+  }
+  .weather-details-wrapper {
+    max-height: 250px !important;
+  }
+  .todoes-wrapper {
+    min-height: 250px !important;
+  }
+  .weather-wrapper.horizontal .weather-input-wrapper,
+  .weather-wrapper.horizontal .weather-details-wrapper {
+    width: 100% !important;
+  }
+}
